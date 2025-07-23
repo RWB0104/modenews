@@ -128,7 +128,7 @@ export default function IndexPage(): React.JSX.Element
 			</div>
 
 			<div className="max-w-5xl justify-self-center">
-				<section className="mt-20 grid grid-cols-2 gap-6 gap-y-12">
+				<section className="mt-20 grid grid-cols-1 gap-6 gap-y-12 sm:grid-cols-2">
 					{mocks.map((mock) => (
 						<NewsCard
 							body={mock.body}
@@ -149,12 +149,12 @@ export default function IndexPage(): React.JSX.Element
 
 					<ul>
 						{mocks.map(({ title }, idx) => (
-							<li className="flex items-center gap-1 not-last:mb-1" key={title}>
-								<div className="flex size-5 items-center justify-center rounded-full bg-black/60 p-1 text-sm font-bold text-white">
+							<li className="flex items-center gap-2 not-last:mb-1" key={title}>
+								<div className="flex size-5 shrink-0 items-center justify-center rounded-full bg-black/60 p-1 text-sm font-bold text-white">
 									{idx}
 								</div>
 
-								<p>{title}</p>
+								<div className="break-words whitespace-break-spaces">{title}</div>
 							</li>
 						))}
 					</ul>

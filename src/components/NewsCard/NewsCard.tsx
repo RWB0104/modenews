@@ -71,9 +71,12 @@ export default function NewsCard({ category, title, body, links }: INewsCard): R
 
 			<div className="flex flex-col gap-2">
 				{links.map(({ name, url }) => (
-					<div className="flex items-center gap-1 text-sm" key={url}>
-						<div className="rounded bg-black/60 px-1 py-0.5 text-white">{name}</div>
-						<a className="text-white underline" href={url} rel="noreferrer" target="_blank">{url}</a>
+					<div className="flex flex-col text-sm" key={url}>
+						<div>
+							<div className="inline rounded bg-black/60 px-1 py-0.5 text-white">{name}</div>
+						</div>
+
+						<a className="break-all text-white underline" href={url} rel="noreferrer" target="_blank">{url}</a>
 					</div>
 				))}
 			</div>
