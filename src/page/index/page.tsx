@@ -129,10 +129,11 @@ export default function IndexPage(): React.JSX.Element
 
 			<div className="max-w-5xl justify-self-center">
 				<section className="mt-20 grid grid-cols-1 gap-6 gap-y-12 sm:grid-cols-2">
-					{mocks.map((mock) => (
+					{mocks.map((mock, idx) => (
 						<NewsCard
 							body={mock.body}
 							category={mock.category}
+							idx={idx}
 							key={mock.title}
 							links={mock.links}
 							title={mock.title}

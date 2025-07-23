@@ -23,6 +23,13 @@ export interface INewsLink
 export interface INewsCard
 {
 	/**
+	 * 순서
+	 *
+	 * @default 0
+	 */
+	readonly idx?: number;
+
+	/**
 	 * 카테고리
 	 */
 	readonly category?: string;
@@ -50,10 +57,13 @@ export interface INewsCard
  *
  * @returns {React.JSX.Element} JSX
  */
-export default function NewsCard({ category, title, body, links }: INewsCard): React.JSX.Element
+export default function NewsCard({ idx = 0, category, title, body, links }: INewsCard): React.JSX.Element
 {
 	return (
-		<Card className="flex flex-col gap-4 rounded-2xl border border-white/10 bg-white/10 p-4 shadow backdrop-blur">
+		<Card
+			className="animate-appear flex flex-col gap-4 rounded-2xl border border-white/10 bg-white/10 p-4 opacity-0 shadow backdrop-blur"
+			style={{ animationDelay: `${150 * idx}ms` }}
+		>
 			{category !== undefined && (
 				<div>
 					<span className="rounded-4xl bg-black/60 px-2 py-1 text-sm text-white">블로그</span>
