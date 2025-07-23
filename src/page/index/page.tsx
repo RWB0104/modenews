@@ -127,8 +127,8 @@ export default function IndexPage(): React.JSX.Element
 				<img src="https://placehold.co/100" />
 			</div>
 
-			<div className="justify-self-center">
-				<section className="mt-20 grid max-w-5xl grid-cols-2 gap-6 gap-y-12">
+			<div className="max-w-5xl justify-self-center">
+				<section className="mt-20 grid grid-cols-2 gap-6 gap-y-12">
 					{mocks.map((mock) => (
 						<NewsCard
 							body={mock.body}
@@ -139,27 +139,27 @@ export default function IndexPage(): React.JSX.Element
 						/>
 					))}
 				</section>
+
+				<Card className="my-20 text-black/60">
+					<h2 className="text-4xl font-bold">GeekNews 요약</h2>
+
+					<p>yyyy년 MM월 dd일</p>
+
+					<h3 className="font-bold">오늘의 주요 뉴스</h3>
+
+					<ul>
+						{mocks.map(({ title }, idx) => (
+							<li className="flex items-center gap-1 not-last:mb-1" key={title}>
+								<div className="flex size-5 items-center justify-center rounded-full bg-black/60 p-1 text-sm font-bold text-white">
+									{idx}
+								</div>
+
+								<p>{title}</p>
+							</li>
+						))}
+					</ul>
+				</Card>
 			</div>
-
-			<Card className="my-20 text-black/60">
-				<h2 className="text-4xl font-bold">GeekNews 요약</h2>
-
-				<p>yyyy년 MM월 dd일</p>
-
-				<h3 className="font-bold">오늘의 주요 뉴스</h3>
-
-				<ul>
-					{mocks.map(({ title }, idx) => (
-						<li className="flex items-center gap-1 not-last:mb-1" key={title}>
-							<div className="flex size-5 items-center justify-center rounded-full bg-black/60 p-1 text-sm font-bold text-white">
-								{idx}
-							</div>
-
-							<p>{title}</p>
-						</li>
-					))}
-				</ul>
-			</Card>
 		</main>
 	);
 }
