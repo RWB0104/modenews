@@ -61,7 +61,7 @@ export default function NewsCard({ idx = 0, category, title, body, links }: INew
 {
 	return (
 		<Card
-			className="animate-appear flex flex-col gap-4 rounded-2xl border border-white/10 bg-white/10 p-4 opacity-0 shadow backdrop-blur"
+			className="animate-appear opacity-0"
 			style={{ animationDelay: `${150 * idx}ms` }}
 		>
 			{category !== undefined && (
