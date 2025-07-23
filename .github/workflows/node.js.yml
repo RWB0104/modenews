@@ -49,6 +49,9 @@ jobs:
     - name: build
       run: pnpm build
 
+    - name: move
+      run: mv dist docs
+
     - name: Push
       uses: s0/git-publish-subdir-action@develop
       env:
